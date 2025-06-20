@@ -1,0 +1,1 @@
+select distinct post_type as Unique_post_Type_count from fact_content;
