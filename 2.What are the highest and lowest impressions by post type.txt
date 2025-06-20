@@ -1,0 +1,6 @@
+select post_type,
+	max(impressions) as highest_impressions,
+    min(impressions) as lowest_impressions
+from fact_content
+group by post_type
+order by highest_impressions desc;

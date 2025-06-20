@@ -1,0 +1,7 @@
+with july_month_likes as 
+	(select fc.post_category, 
+		sum(fc.likes) as Total_likes from fact_content fc join dim_dates dd on fc.date=dd.date
+	where dd.month_name="july"
+group by fc.post_category)
+
+select post_category, Total_likes from july_month_likes order by Total_likes desc;

@@ -1,0 +1,7 @@
+select dd.month_name,
+	sum(fa.profile_visits) as Total_profile_visits,
+    sum(fa.new_followers) as Total_new_followers
+from fact_account fa
+join dim_dates dd on dd.date=fa.date
+group by dd.month_name
+order by min(dd.date);

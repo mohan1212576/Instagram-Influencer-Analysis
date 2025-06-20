@@ -1,0 +1,13 @@
+with monthly_categories as 
+	(select dd.month_name, 
+    fc.post_category as postcategory_names, 
+    count(*) as category_count from fact_content fc
+	join dim_dates dd on fc.date=dd.date
+group by fc.post_category, dd.month_name)
+
+select month_name,
+	group_concat(distinct postcategory_names order by postcategory_names separator ',') as post_category_names,
+    count(distinct postcategory_names) as post_category_count from monthly_categories
+    group by month_name
+    order by min(month_name);
+    

@@ -1,0 +1,5 @@
+SELECT 
+		post_type,
+        sum(reach) as total_reach,
+round(sum(reach)*100 / (select sum(reach) from fact_content),2) as percentage FROM fact_content 
+group by post_type;

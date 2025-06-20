@@ -1,0 +1,18 @@
+DELIMITER //
+CREATE PROCEDURE GetWeeklySharesByPostTypee(week_number INT)
+BEGIN
+    SELECT 
+        post_type,
+        SUM(shares) AS total_shares
+    FROM 
+        fact_content
+    WHERE 
+        WEEK(date) = week_number  
+    GROUP BY 
+        post_type
+    ORDER BY 
+        total_shares DESC;
+END //
+DELIMITER ;
+
+CALL GetWeeklySharesByPostTypee(14);

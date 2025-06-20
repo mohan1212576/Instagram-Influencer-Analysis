@@ -1,0 +1,14 @@
+with ranking as(select 
+	month(date) as months,
+    date,
+    new_followers,
+    rank()over (partition by extract(month from date) order by new_followers desc) as date_rank
+from fact_account)
+
+select
+	monthname(date) as months,
+    date,
+    new_followers
+from ranking
+where date_rank<=3
+order by month(date),date_rank;

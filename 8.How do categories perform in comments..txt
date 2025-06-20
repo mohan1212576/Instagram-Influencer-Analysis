@@ -1,0 +1,12 @@
+select 
+		post_category, 
+        #extract(quarter from date) as Quarter_year,
+        concat('Q', extract(quarter from date)) as Quarter_period,
+        sum(comments) as Total_comments,
+        sum(saves) as Total_saves from fact_content
+group by 
+	post_category,
+    #Quarter_year,
+    concat('Q',extract(quarter from date))
+order by
+	post_category;

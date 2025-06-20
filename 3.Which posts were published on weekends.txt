@@ -1,0 +1,5 @@
+select fc.*, dd.weekday_or_weekend,dd.month_name
+from fact_content fc
+join dim_dates dd on fc.date=dd.date
+where dd.weekday_or_weekend="Weekend"
+and dd.month_name in ("March","April");
