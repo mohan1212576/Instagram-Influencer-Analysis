@@ -46,17 +46,20 @@ This project involved analyzing Instagram post performance data to generate acti
 
 ---
 
-## 📂 SQL Query Library
+## 💼 Business Questions Solved
 
-| 📂 Query Name | 📋 Description |
-|--------------|----------------|
-| `GetTotalSharesByWeek.sql` | Retrieves total shares per post type for a given week. |
-| `Q1-post-comments-saves.sql` | Analyzes number of comments and saves for each post. |
-| `max and min impressions.sql` | Finds posts with the highest and lowest impressions. |
-| `month-date-new followers.sql` | Tracks new followers gained month over month. |
-| `post_category and total_likes.sql` | Calculates total likes for each post category. |
-| `unique_post_types.sql` | Lists all unique post types in the dataset. |
-| `weekend in March and April.sql` | Analyzes influencer activity on weekends in March & April. |
+| 🔢 **Question** | 💡 **Business Question**                                                                 |
+|----------------|------------------------------------------------------------------------------------------|
+| 1️⃣             | How many unique post types exist in the dataset?                                        |
+| 2️⃣             | What are the highest and lowest impressions by post type?                               |
+| 3️⃣             | Which posts were published on weekends in March/April? (CSV exported)                   |
+| 4️⃣             | What are the monthly profile visits and new followers?                                  |
+| 5️⃣             | Which post categories got most likes in July?                                           |
+| 6️⃣             | How many unique post categories exist monthly (with counts)?                            |
+| 7️⃣             | What is the reach percentage breakdown by post type?                                    |
+| 8️⃣             | How do categories perform in comments/saves per quarter?                                |
+| 9️⃣             | What are the top 3 dates/month for new followers?                                       |
+| 🔟             | How do post types compare in weekly shares? (Stored Procedure)                           |
 
 ---
 
